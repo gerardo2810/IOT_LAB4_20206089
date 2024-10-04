@@ -43,7 +43,6 @@ public class PosicionesAdapter extends RecyclerView.Adapter<PosicionesAdapter.Po
                         " DG: " + equipo.getDiferenciaGoles()
         );
 
-        // Cargar el badge del equipo con Glide
         Glide.with(holder.itemView.getContext())
                 .load(equipo.getBadge())
                 .into(holder.badgeImageView);

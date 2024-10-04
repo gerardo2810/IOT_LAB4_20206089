@@ -15,12 +15,10 @@ public class AppActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app);
 
-        // Cargar el fragmento inicial si es la primera vez
         if (savedInstanceState == null) {
             loadFragment(new LigasFragment());
         }
 
-        // Configurar botones de navegación
         findViewById(R.id.btnLigas).setOnClickListener(v -> {
             loadFragment(new LigasFragment());
         });
@@ -34,12 +32,11 @@ public class AppActivity extends AppCompatActivity {
         });
     }
 
-    // Método para cargar fragmentos en el contenedor
     private void loadFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
-        fragmentTransaction.addToBackStack(null); // Agregar a la pila para que el botón de atrás funcione
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 }

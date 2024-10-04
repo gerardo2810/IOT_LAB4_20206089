@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".LigasFragment">
 
-    <!-- Barra de búsqueda -->
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -32,7 +31,6 @@
             android:text="Buscar"/>
     </LinearLayout>
 
-    <!-- RecyclerView para mostrar las ligas -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewLigas"
         android:layout_width="match_parent"

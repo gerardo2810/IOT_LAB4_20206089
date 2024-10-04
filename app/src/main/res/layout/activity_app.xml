@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".AppActivity">
 
-    <!-- FrameLayout para contener los Fragmentos -->
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
@@ -14,7 +13,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/navigationLayout"/>
 
-    <!-- Botones de Navegación en la parte inferior -->
     <LinearLayout
         android:id="@+id/navigationLayout"
         android:layout_width="match_parent"

@@ -41,7 +41,6 @@ public class ResultadosFragment extends Fragment implements SensorEventListener 
     private EditText etIdLiga, etTemporada, etRonda;
     private Button btnBuscarResultados;
 
-    // Variables del acelerómetro
     private SensorManager sensorManager;
     private Sensor accelerometer;
     private float accelerationCurrent;
@@ -76,7 +75,6 @@ public class ResultadosFragment extends Fragment implements SensorEventListener 
             }
         });
 
-        // Inicializar SensorManager
         sensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
         if (sensorManager != null) {
             accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -104,7 +102,7 @@ public class ResultadosFragment extends Fragment implements SensorEventListener 
                             String equipoLocal = eventObject.getString("strHomeTeam");
                             String equipoVisitante = eventObject.getString("strAwayTeam");
                             String resultado = eventObject.getString("intHomeScore") + " - " + eventObject.getString("intAwayScore");
-                            String logoCompetenciaUrl = eventObject.getString("strThumb"); // URL del logo
+                            String logoCompetenciaUrl = eventObject.getString("strThumb");
                             int espectadores = eventObject.optInt("intSpectators", 0);
 
                             resultados.add(new Resultado(nombreCompetencia, fechaEncuentro, equipoLocal, equipoVisitante, resultado, logoCompetenciaUrl, espectadores));
@@ -121,7 +119,6 @@ public class ResultadosFragment extends Fragment implements SensorEventListener 
         queue.add(stringRequest);
     }
 
-    // Implementación del SensorEventListener para detectar agitación
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
@@ -134,14 +131,12 @@ public class ResultadosFragment extends Fragment implements SensorEventListener 
             accelerationCurrent = (float) Math.sqrt(x * x + y * y + z * z);
             float delta = accelerationCurrent - accelerationLast;
 
-            // Verificar si el cambio en aceleración es mayor que el umbral
             if (delta > shakeThreshold) {
                 // Mostrar dialog de confirmación
                 new AlertDialog.Builder(getContext())
                         .setTitle("Confirmar acción")
                         .setMessage("¿Desea eliminar los últimos resultados?")
                         .setPositiveButton("Sí", (dialog, which) -> {
-                            // Eliminar el último resultado si la lista no está vacía
                             if (!resultados.isEmpty()) {
                                 resultados.remove(resultados.size() - 1);
                                 resultadosAdapter.notifyDataSetChanged();

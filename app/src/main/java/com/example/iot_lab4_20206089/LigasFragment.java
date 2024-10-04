@@ -50,7 +50,6 @@ public class LigasFragment extends Fragment {
         ligasAdapter = new LigasAdapter(ligas);
         recyclerViewLigas.setAdapter(ligasAdapter);
 
-        // Cargar todas las ligas cuando el fragmento se inicia
         obtenerLigasGenerales();
 
         btnBuscarPais.setOnClickListener(v -> {
@@ -103,7 +102,6 @@ public class LigasFragment extends Fragment {
         RequestQueue queue = Volley.newRequestQueue(getContext());
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 response -> {
-                    // Registrar la respuesta de la API para depuración
                     Log.d("API_RESPONSE", response);
 
                     try {

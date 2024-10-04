@@ -37,7 +37,6 @@ public class ResultadosAdapter extends RecyclerView.Adapter<ResultadosAdapter.Re
         holder.resultadoTextView.setText(resultado.getResultado());
         holder.espectadoresTextView.setText("Espectadores: " + resultado.getEspectadores());
 
-        // Cargar el logo de la competencia
         Glide.with(holder.itemView.getContext())
                 .load(resultado.getLogoCompetenciaUrl())  // URL del logo de la competencia
                 .into(holder.logoCompetenciaImageView);

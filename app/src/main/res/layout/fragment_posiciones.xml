@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".PosicionesFragment">
 
-    <!-- Layout para ingresar ID de la liga y temporada -->
     <LinearLayout
         android:id="@+id/linearLayoutPosiciones"
         android:layout_width="match_parent"
@@ -16,7 +15,6 @@
         app:layout_constraintTop_toTopOf="parent"
         android:padding="16dp">
 
-        <!-- EditText para ingresar el ID de la liga -->
         <EditText
             android:id="@+id/etIdLiga"
             android:layout_width="0dp"
@@ -27,7 +25,6 @@
             android:padding="8dp"
             android:backgroundTint="@android:color/darker_gray"/>
 
-        <!-- EditText para ingresar la temporada -->
         <EditText
             android:id="@+id/etTemporada"
             android:layout_width="0dp"
@@ -38,7 +35,6 @@
             android:padding="8dp"
             android:backgroundTint="@android:color/darker_gray"/>
 
-        <!-- Botón para realizar la búsqueda -->
         <Button
             android:id="@+id/btnBuscarPosiciones"
             android:layout_width="wrap_content"
@@ -46,7 +42,6 @@
             android:text="Buscar"/>
     </LinearLayout>
 
-    <!-- RecyclerView para mostrar las posiciones de los equipos -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewPosiciones"
         android:layout_width="match_parent"
