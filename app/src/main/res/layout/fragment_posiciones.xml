@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PosicionesFragment">
+
+    <!-- Layout para ingresar ID de la liga y temporada -->
+    <LinearLayout
+        android:id="@+id/linearLayoutPosiciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="16dp">
+
+        <!-- EditText para ingresar el ID de la liga -->
+        <EditText
+            android:id="@+id/etIdLiga"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="idLiga"
+            android:inputType="number"
+            android:padding="8dp"
+            android:backgroundTint="@android:color/darker_gray"/>
+
+        <!-- EditText para ingresar la temporada -->
+        <EditText
+            android:id="@+id/etTemporada"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Temporada"
+            android:inputType="text"
+            android:padding="8dp"
+            android:backgroundTint="@android:color/darker_gray"/>
+
+        <!-- Botón para realizar la búsqueda -->
+        <Button
+            android:id="@+id/btnBuscarPosiciones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buscar"/>
+    </LinearLayout>
+
+    <!-- RecyclerView para mostrar las posiciones de los equipos -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPosiciones"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutPosiciones"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

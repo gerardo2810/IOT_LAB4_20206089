@@ -1,0 +1,71 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imgLogoCompetencia"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="Logo Competencia" />
+
+    <TextView
+        android:id="@+id/tvNombreCompetencia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nombre Competencia"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/imgLogoCompetencia"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvFechaEncuentro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Fecha"
+        app:layout_constraintStart_toEndOf="@id/imgLogoCompetencia"
+        app:layout_constraintTop_toBottomOf="@id/tvNombreCompetencia"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvEquipoLocal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Equipo Local"
+        app:layout_constraintTop_toBottomOf="@id/tvFechaEncuentro"
+        app:layout_constraintStart_toStartOf="@id/tvNombreCompetencia"
+        app:layout_constraintEnd_toStartOf="@+id/tvEquipoVisitante" />
+
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resultado"
+        app:layout_constraintStart_toEndOf="@id/tvEquipoLocal"
+        app:layout_constraintEnd_toStartOf="@+id/tvEquipoVisitante"
+        app:layout_constraintTop_toBottomOf="@id/tvFechaEncuentro" />
+
+    <TextView
+        android:id="@+id/tvEquipoVisitante"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Equipo Visitante"
+        app:layout_constraintStart_toEndOf="@id/tvResultado"
+        app:layout_constraintEnd_toEndOf="@id/tvNombreCompetencia"
+        app:layout_constraintTop_toBottomOf="@id/tvFechaEncuentro" />
+
+    <TextView
+        android:id="@+id/tvEspectadores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Espectadores"
+        app:layout_constraintTop_toBottomOf="@id/tvEquipoLocal"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
